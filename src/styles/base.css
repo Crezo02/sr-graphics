@@ -1,0 +1,47 @@
+/* ══════════════════════════════════════
+   RESET & BASE
+   ══════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--ff-body);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* ══════════════════════════════════════
+   LOADER
+   ══════════════════════════════════════ */
+.loader {
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--always-dark);
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-inner { text-align: center; }
+.loader-logo {
+  font-family: var(--ff-display);
+  font-size: 2.5rem; font-weight: 800;
+  color: var(--white); letter-spacing: -1px;
+  margin-bottom: 1.5rem;
+}
+.loader-logo span { color: var(--accent); }
+.loader-bar {
+  width: 200px; height: 3px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 99px; overflow: hidden;
+}
+.loader-progress {
+  height: 100%; width: 0;
+  background: var(--accent);
+  border-radius: 99px;
+  animation: loadFill 1.8s ease forwards;
+}
+@keyframes loadFill { to { width: 100%; } }

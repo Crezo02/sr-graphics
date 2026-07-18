@@ -1,14 +1,18 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SR Graphics | Best Advertising & Printing Agency in Bardhaman</title>
-  <meta name="description" content="S R Graphics offers premium Flex Printing, Digital Printing, Custom Stationery, and Corporate Gifting in Bardhaman. 8+ years, 4.9★ Google rating. Get your free quote today.">
-  <meta name="keywords" content="printing bardhaman, flex printing bardhaman, digital printing bardhaman, corporate gifting bardhaman, banner printing west bengal, SR Graphics">
+  <meta name="description"
+    content="S R Graphics offers premium Flex Printing, Digital Printing, Custom Stationery, and Corporate Gifting in Bardhaman. 8+ years, 4.9★ Google rating. Get your free quote today.">
+  <meta name="keywords"
+    content="printing bardhaman, flex printing bardhaman, digital printing bardhaman, corporate gifting bardhaman, banner printing west bengal, SR Graphics">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="SR Graphics | Best Printing Agency in Bardhaman">
-  <meta property="og:description" content="Premium flex printing, digital banners, stationery & corporate gifting. 8+ years. 4.9★ rated. Bardhaman's #1 printing partner.">
+  <meta property="og:description"
+    content="Premium flex printing, digital banners, stationery & corporate gifting. 8+ years. 4.9★ rated. Bardhaman's #1 printing partner.">
   <meta property="og:type" content="business.business">
   <meta property="og:url" content="https://sr-graphics.vercel.app">
   <link rel="canonical" href="https://sr-graphics.vercel.app">
@@ -66,1468 +70,570 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
-  <style>
-    /* ══════════════════════════════════════
-       DESIGN TOKENS
-    ══════════════════════════════════════ */
-    :root {
-      --ink:       #0d0d0d;
-      --ink-2:     #3a3a3a;
-      --ink-3:     #6b6b6b;
-      --paper:     #fafaf8;
-      --white:     #ffffff;
-      --accent:    #d4420a;       /* print-press red-orange */
-      --accent-2:  #f5622a;
-      --gold:      #c9933a;
-      --surface:   #f2f0ec;
-      --surface-2: #e8e4dd; 
-      --border:    #e0dbd4;
-      --shadow:    rgba(13,13,13,0.08);
-      --shadow-lg: rgba(13,13,13,0.15);
-      --wa-green:  #25d366;
-      --ff-display: 'Playfair Display', Georgia, serif;
-      --ff-body:    'DM Sans', system-ui, sans-serif;
-      --ff-mono:    'Inter', monospace;
-      --r-sm: 8px;
-      --r-md: 16px;
-      --r-lg: 24px;
-      --r-xl: 40px;
-      --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    /* ══════════════════════════════════════
-       RESET & BASE
-    ══════════════════════════════════════ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body {
-      font-family: var(--ff-body);
-      background: var(--paper);
-      color: var(--ink);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-    button { cursor: pointer; border: none; background: none; font-family: inherit; }
-
-    /* ══════════════════════════════════════
-       LOADER
-    ══════════════════════════════════════ */
-    .loader {
-      position: fixed; inset: 0; z-index: 9999;
-      background: var(--ink);
-      display: flex; align-items: center; justify-content: center;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-    .loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-    .loader-inner { text-align: center; }
-    .loader-logo {
-      font-family: var(--ff-display);
-      font-size: 2.5rem; font-weight: 800;
-      color: var(--white); letter-spacing: -1px;
-      margin-bottom: 1.5rem;
-    }
-    .loader-logo span { color: var(--accent); }
-    .loader-bar {
-      width: 200px; height: 3px;
-      background: rgba(255,255,255,0.15);
-      border-radius: 99px; overflow: hidden;
-    }
-    .loader-progress {
-      height: 100%; width: 0;
-      background: var(--accent);
-      border-radius: 99px;
-      animation: loadFill 1.8s ease forwards;
-    }
-    @keyframes loadFill { to { width: 100%; } }
-
-    /* ══════════════════════════════════════
-       NAV
-    ══════════════════════════════════════ */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1rem 4%;
-      background: rgba(250,250,248,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s, box-shadow 0.3s;
-    }
-    nav.scrolled {
-      border-color: var(--border);
-      box-shadow: 0 2px 20px var(--shadow);
-    }
-    .nav-logo {
-      font-family: var(--ff-display);
-      font-size: 1.5rem; font-weight: 800;
-      color: var(--ink); letter-spacing: -0.5px;
-    }
-    .nav-logo span { color: var(--accent); }
-    .nav-links { display: flex; align-items: center; gap: 2rem; }
-    .nav-links a {
-      font-size: 0.9rem; font-weight: 500;
-      color: var(--ink-2);
-      transition: color var(--transition);
-    }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-links .nav-cta {
-      background: var(--accent);
-      color: var(--white) !important;
-      padding: 0.55rem 1.25rem;
-      border-radius: var(--r-sm);
-      font-weight: 600;
-      transition: background var(--transition), transform var(--transition);
-    }
-    .nav-links .nav-cta:hover { background: var(--accent-2); transform: translateY(-1px); }
-    .hamburger {
-      display: none; flex-direction: column;
-      gap: 5px; padding: 4px;
-    }
-    .hamburger span {
-      display: block; width: 24px; height: 2px;
-      background: var(--ink); border-radius: 2px;
-      transition: var(--transition);
-    }
-    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-
-    /* Mobile nav */
-    @media (max-width: 768px) {
-      .hamburger { display: flex; }
-      .nav-links {
-        position: fixed; top: 0; right: -100%; width: 75%; max-width: 300px;
-        height: 100vh; flex-direction: column; justify-content: center;
-        background: var(--white); gap: 2rem; padding: 2rem;
-        box-shadow: -4px 0 30px var(--shadow-lg);
-        transition: right var(--transition);
-      }
-      .nav-links.open { right: 0; }
-      .nav-links a { font-size: 1.1rem; }
-    }
-
-    /* ══════════════════════════════════════
-       REVEAL ANIMATION
-    ══════════════════════════════════════ */
-    .reveal {
-      opacity: 0; transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* ══════════════════════════════════════
-       HERO
-    ══════════════════════════════════════ */
-    .hero {
-      min-height: 100vh;
-      display: grid; grid-template-columns: 1fr 1fr;
-      align-items: center; gap: 3rem;
-      padding: 8rem 4% 4rem;
-      position: relative; overflow: hidden;
-    }
-    .hero-bg-pattern {
-      position: absolute; inset: 0; z-index: 0;
-      background-image:
-        radial-gradient(circle at 10% 20%, rgba(212,66,10,0.06) 0%, transparent 40%),
-        radial-gradient(circle at 85% 70%, rgba(201,147,58,0.06) 0%, transparent 40%);
-    }
-    .hero-left { position: relative; z-index: 1; }
-    .hero-tag {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 99px;
-      padding: 0.35rem 1rem;
-      font-size: 0.8rem; font-weight: 600;
-      color: var(--accent); margin-bottom: 1.5rem;
-      text-transform: uppercase; letter-spacing: 0.08em;
-    }
-    .tag-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--accent);
-      animation: pulse 2s ease infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.5; transform: scale(1.3); }
-    }
-    .hero-title {
-      font-family: var(--ff-display);
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
-      font-weight: 900; line-height: 1.07;
-      letter-spacing: -2px; color: var(--ink);
-      margin-bottom: 1.25rem;
-    }
-    .hero-title em { color: var(--accent); font-style: normal; }
-    .hero-desc {
-      font-size: 1.05rem; color: var(--ink-2);
-      max-width: 480px; margin-bottom: 2rem;
-      line-height: 1.7;
-    }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--accent); color: var(--white);
-      padding: 0.85rem 1.75rem; border-radius: var(--r-sm);
-      font-weight: 700; font-size: 0.95rem;
-      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-      box-shadow: 0 4px 14px rgba(212,66,10,0.25);
-    }
-    .btn-primary:hover { background: var(--accent-2); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212,66,10,0.35); }
-    .btn-ghost {
-      display: inline-flex; align-items: center;
-      border: 2px solid var(--border); border-radius: var(--r-sm);
-      padding: 0.85rem 1.75rem;
-      font-weight: 600; font-size: 0.95rem; color: var(--ink-2);
-      transition: border-color var(--transition), color var(--transition), transform var(--transition);
-    }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-    .hero-stats { display: flex; gap: 2rem; }
-    .stat { text-align: left; }
-    .stat-num {
-      font-family: var(--ff-display);
-      font-size: 2rem; font-weight: 900;
-      color: var(--ink); line-height: 1;
-    }
-    .stat-label { font-size: 0.78rem; color: var(--ink-3); font-weight: 500; margin-top: 2px; }
-
-    /* Hero right */
-    .hero-right { position: relative; z-index: 1; display: flex; justify-content: center; }
-    .hero-visual { position: relative; width: 400px; height: 420px; }
-    .brand-showcase {
-      width: 280px; height: 280px;
-      background: var(--ink);
-      border-radius: var(--r-lg);
-      display: flex; align-items: center; justify-content: center;
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      overflow: hidden;
-    }
-    .brand-showcase::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(212,66,10,0.25) 0%, transparent 60%);
-    }
-    .showcase-inner { text-align: center; position: relative; z-index: 1; }
-    .showcase-tag {
-      font-size: 0.7rem; letter-spacing: 0.15em;
-      color: rgba(255,255,255,0.5); text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-    .showcase-text {
-      font-family: var(--ff-display);
-      font-size: 1.8rem; font-weight: 900;
-      color: var(--white); line-height: 1.1;
-      letter-spacing: -1px;
-    }
-    .floating-card {
-      position: absolute;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--r-md);
-      padding: 0.6rem 1rem;
-      font-size: 0.8rem; font-weight: 600;
-      box-shadow: 0 8px 24px var(--shadow);
-      white-space: nowrap;
-      animation: float 4s ease-in-out infinite;
-    }
-    .floating-card span { margin-right: 0.35rem; }
-    .card-1 { top: 5%; left: 0; animation-delay: 0s; }
-    .card-2 { top: 50%; right: -5%; animation-delay: 1.3s; }
-    .card-3 { bottom: 10%; left: 5%; animation-delay: 2.6s; }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50%       { transform: translateY(-8px); }
-    }
-
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 7rem; text-align: center; }
-      .hero-right { display: none; }
-      .hero-tag { margin-inline: auto; }
-      .hero-actions { justify-content: center; }
-      .hero-stats { justify-content: center; }
-      .hero-desc { margin-inline: auto; }
-    }
-
-    /* ══════════════════════════════════════
-       TRUST BAR
-    ══════════════════════════════════════ */
-    .trust-bar {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 1.5rem 4%;
-      display: flex; flex-direction: column; align-items: center; gap: 1rem;
-    }
-    .trust-label { font-size: 0.78rem; color: var(--ink-3); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
-    .trust-logos { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
-    .trust-item {
-      font-size: 0.85rem; color: var(--ink-2); font-weight: 600;
-      display: flex; align-items: center; gap: 0.4rem;
-    }
-
-    /* ══════════════════════════════════════
-       MARQUEE
-    ══════════════════════════════════════ */
-    .marquee-strip {
-      overflow: hidden; padding: 1rem 0;
-      background: var(--accent); color: var(--white);
-    }
-    .marquee-track {
-      display: flex; gap: 2rem;
-      width: max-content;
-      animation: marquee 25s linear infinite;
-    }
-    .marquee-item { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; display: flex; align-items: center; gap: 1rem; }
-    .marquee-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.5); display: inline-block; }
-    @keyframes marquee { to { transform: translateX(-50%); } }
-
-    /* ══════════════════════════════════════
-       SECTION COMMONS
-    ══════════════════════════════════════ */
-    section { padding: 5rem 4%; }
-    .section-header { text-align: center; margin-bottom: 3.5rem; }
-    .section-tag {
-      display: inline-block;
-      font-size: 0.72rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.12em;
-      color: var(--accent); margin-bottom: 0.75rem;
-      background: rgba(212,66,10,0.08);
-      padding: 0.3rem 0.75rem; border-radius: 99px;
-    }
-    .section-title {
-      font-family: var(--ff-display);
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 900; line-height: 1.15;
-      letter-spacing: -1px; color: var(--ink);
-    }
-    .section-subtitle { font-size: 1rem; color: var(--ink-2); margin-top: 0.75rem; max-width: 540px; margin-inline: auto; }
-
-    /* ══════════════════════════════════════
-       PRICE CALCULATOR (NEW)
-    ══════════════════════════════════════ */
-    .calculator-section {
-      background: var(--ink);
-      color: var(--white);
-      padding: 5rem 4%;
-    }
-    .calculator-inner {
-      max-width: 860px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 3rem; align-items: center;
-    }
-    .calculator-left .section-tag { color: var(--gold); background: rgba(201,147,58,0.15); }
-    .calculator-left .section-title { color: var(--white); }
-    .calculator-left p { color: rgba(255,255,255,0.6); margin-top: 0.75rem; font-size: 0.95rem; }
-    .calc-box {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--r-lg); padding: 2rem;
-    }
-    .calc-field { margin-bottom: 1.5rem; }
-    .calc-label {
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: 0.82rem; font-weight: 600;
-      color: rgba(255,255,255,0.7); margin-bottom: 0.6rem;
-    }
-    .calc-label span { color: var(--gold); font-size: 1rem; font-weight: 700; }
-    .calc-select {
-      width: 100%; background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12); border-radius: var(--r-sm);
-      color: var(--white); padding: 0.7rem 1rem;
-      font-family: var(--ff-body); font-size: 0.9rem;
-      appearance: none; cursor: pointer;
-    }
-    .calc-select option { background: #1a1a1a; }
-    .calc-slider {
-      width: 100%; -webkit-appearance: none;
-      height: 4px; border-radius: 2px;
-      background: rgba(255,255,255,0.15); outline: none; cursor: pointer;
-    }
-    .calc-slider::-webkit-slider-thumb {
-      -webkit-appearance: none; width: 20px; height: 20px;
-      border-radius: 50%; background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(212,66,10,0.25);
-      cursor: pointer; transition: box-shadow 0.2s;
-    }
-    .calc-slider::-webkit-slider-thumb:hover { box-shadow: 0 0 0 6px rgba(212,66,10,0.35); }
-    .calc-result {
-      background: var(--accent);
-      border-radius: var(--r-md); padding: 1.25rem;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .calc-result-label { font-size: 0.8rem; color: rgba(255,255,255,0.8); font-weight: 500; }
-    .calc-result-price { font-family: var(--ff-display); font-size: 2rem; font-weight: 900; color: var(--white); }
-    .calc-result-unit { font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-top: 2px; }
-    .calc-cta {
-      display: block; width: 100%; margin-top: 1rem;
-      background: var(--white); color: var(--ink);
-      border-radius: var(--r-sm); padding: 0.85rem;
-      font-weight: 700; font-size: 0.9rem; text-align: center;
-      transition: background var(--transition), transform var(--transition);
-    }
-    .calc-cta:hover { background: var(--surface); transform: translateY(-1px); }
-
-    @media (max-width: 768px) {
-      .calculator-inner { grid-template-columns: 1fr; }
-    }
-
-    /* ══════════════════════════════════════
-       PORTFOLIO / GALLERY (NEW)
-    ══════════════════════════════════════ */
-    .portfolio-section { background: var(--white); }
-    .portfolio-filters {
-      display: flex; gap: 0.5rem; flex-wrap: wrap;
-      justify-content: center; margin-bottom: 2.5rem;
-    }
-    .filter-btn {
-      padding: 0.45rem 1.1rem; border-radius: 99px;
-      border: 1px solid var(--border);
-      font-size: 0.82rem; font-weight: 600;
-      color: var(--ink-2); transition: var(--transition);
-      background: var(--white); cursor: pointer;
-    }
-    .filter-btn.active, .filter-btn:hover {
-      background: var(--accent); color: var(--white); border-color: var(--accent);
-    }
-    .portfolio-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.25rem;
-    }
-    .portfolio-item {
-      border-radius: var(--r-md); overflow: hidden;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      position: relative; cursor: pointer;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .portfolio-item:hover { transform: translateY(-4px); box-shadow: 0 12px 32px var(--shadow-lg); }
-    .portfolio-thumb {
-      height: 200px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 4rem;
-      background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
-    }
-    .portfolio-overlay {
-      position: absolute; inset: 0;
-      background: rgba(13,13,13,0.8);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      opacity: 0; transition: opacity var(--transition);
-      color: var(--white); gap: 0.5rem;
-    }
-    .portfolio-item:hover .portfolio-overlay { opacity: 1; }
-    .portfolio-overlay-title { font-weight: 700; font-size: 1rem; }
-    .portfolio-overlay-tag {
-      font-size: 0.75rem; color: rgba(255,255,255,0.7);
-      background: var(--accent); padding: 0.2rem 0.6rem; border-radius: 99px;
-    }
-    .portfolio-info { padding: 1rem; }
-    .portfolio-name { font-weight: 700; font-size: 0.9rem; color: var(--ink); }
-    .portfolio-cat { font-size: 0.75rem; color: var(--ink-3); margin-top: 2px; }
-    .portfolio-upload-cta {
-      margin-top: 2.5rem; text-align: center;
-    }
-    .portfolio-upload-cta p { font-size: 0.9rem; color: var(--ink-3); margin-bottom: 1rem; }
-
-    /* ══════════════════════════════════════
-       SERVICES
-    ══════════════════════════════════════ */
-    .services { background: var(--surface); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .service-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--r-md);
-      padding: 2rem 1.75rem;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-      position: relative; overflow: hidden;
-    }
-    .service-card::after {
-      content: '';
-      position: absolute; bottom: 0; left: 0; right: 0;
-      height: 3px; background: var(--accent);
-      transform: scaleX(0); transform-origin: left;
-      transition: transform var(--transition);
-    }
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px var(--shadow); border-color: transparent; }
-    .service-card:hover::after { transform: scaleX(1); }
-    .service-icon-wrap {
-      width: 52px; height: 52px;
-      background: rgba(212,66,10,0.08);
-      border-radius: var(--r-sm);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1.25rem;
-    }
-    .service-icon { font-size: 1.5rem; }
-    .service-name { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; }
-    .service-desc { font-size: 0.88rem; color: var(--ink-2); line-height: 1.65; margin-bottom: 1.25rem; }
-    .service-link { font-size: 0.85rem; font-weight: 700; color: var(--accent); }
-    .service-link:hover { text-decoration: underline; }
-
-    /* ══════════════════════════════════════
-       ABOUT
-    ══════════════════════════════════════ */
-    .about {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 4rem; align-items: center;
-      background: var(--white);
-    }
-    .about-text { font-size: 0.95rem; color: var(--ink-2); line-height: 1.75; margin-bottom: 1rem; }
-    .about-highlights { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.5rem; }
-    .highlight { display: flex; gap: 1rem; align-items: flex-start; }
-    .highlight-icon { font-size: 1.5rem; flex-shrink: 0; }
-    .highlight strong { display: block; font-size: 0.95rem; margin-bottom: 0.2rem; }
-    .highlight p { font-size: 0.82rem; color: var(--ink-3); }
-    .about-visual { display: flex; justify-content: center; align-items: center; }
-    .about-card {
-      width: 260px; height: 260px;
-      background: var(--ink);
-      border-radius: var(--r-xl);
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-    }
-    .about-card::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(212,66,10,0.3) 0%, transparent 70%);
-    }
-    .about-card-inner { position: relative; text-align: center; color: var(--white); }
-    .about-stat-big {
-      font-family: var(--ff-display);
-      font-size: 5rem; font-weight: 900;
-      line-height: 1; color: var(--white);
-    }
-    .about-stat-label { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 0.25rem; }
-
-    @media (max-width: 768px) {
-      .about { grid-template-columns: 1fr; }
-      .about-visual { display: none; }
-    }
-
-    /* ══════════════════════════════════════
-       WHY US
-    ══════════════════════════════════════ */
-    .why-us { background: var(--surface); }
-    .why-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1.25rem;
-    }
-    .why-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--r-md);
-      padding: 2rem 1.5rem;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .why-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px var(--shadow); }
-    .why-number {
-      font-family: var(--ff-display);
-      font-size: 3rem; font-weight: 900;
-      color: rgba(212,66,10,0.12); line-height: 1;
-      margin-bottom: 1rem;
-    }
-    .why-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .why-card p { font-size: 0.85rem; color: var(--ink-2); line-height: 1.65; }
-
-    /* ══════════════════════════════════════
-       TESTIMONIALS
-    ══════════════════════════════════════ */
-    .testimonials { background: var(--white); }
-    .testimonial-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .testimonial-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r-md);
-      padding: 2rem 1.75rem;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .testimonial-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px var(--shadow); }
-    .testimonial-stars { color: var(--gold); font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
-    .testimonial-text { font-size: 0.9rem; color: var(--ink-2); line-height: 1.75; margin-bottom: 1.5rem; font-style: italic; }
-    .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
-    .author-avatar {
-      width: 42px; height: 42px; border-radius: 50%;
-      background: var(--accent); color: var(--white);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 0.8rem; flex-shrink: 0;
-    }
-    .testimonial-author strong { display: block; font-size: 0.9rem; }
-    .testimonial-author span { font-size: 0.78rem; color: var(--ink-3); }
-
-    /* ══════════════════════════════════════
-       CTA / CONTACT
-    ══════════════════════════════════════ */
-    .cta-section {
-      background: var(--ink);
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 4rem; align-items: center;
-      padding: 5rem 4%;
-    }
-    .cta-title {
-      font-family: var(--ff-display);
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 900; line-height: 1.15;
-      letter-spacing: -1px; color: var(--white);
-      margin-bottom: 1rem;
-    }
-    .cta-desc { font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
-    .cta-features { display: flex; flex-direction: column; gap: 0.5rem; }
-    .cta-feature { font-size: 0.88rem; color: rgba(255,255,255,0.8); font-weight: 500; display: flex; align-items: center; gap: 0.5rem; }
-    .cta-box {
-      background: var(--white);
-      border-radius: var(--r-lg); padding: 2.25rem;
-    }
-    .cta-box-title { font-size: 1.25rem; font-weight: 800; margin-bottom: 1.5rem; }
-    .cta-input {
-      display: block; width: 100%;
-      border: 1.5px solid var(--border); border-radius: var(--r-sm);
-      padding: 0.75rem 1rem;
-      font-family: var(--ff-body); font-size: 0.9rem;
-      background: var(--paper); color: var(--ink);
-      margin-bottom: 0.85rem;
-      transition: border-color var(--transition), box-shadow var(--transition);
-      outline: none;
-    }
-    .cta-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(212,66,10,0.12); }
-    .cta-select { appearance: none; cursor: pointer; }
-    .cta-textarea { resize: vertical; min-height: 90px; }
-    .cta-btn {
-      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-      width: 100%; background: var(--accent); color: var(--white);
-      padding: 0.9rem; border-radius: var(--r-sm);
-      font-weight: 700; font-size: 0.95rem;
-      transition: background var(--transition), transform var(--transition);
-      cursor: pointer; border: none;
-    }
-    .cta-btn:hover { background: var(--accent-2); transform: translateY(-1px); }
-    .cta-btn.loading { opacity: 0.7; pointer-events: none; }
-    .form-success {
-      text-align: center; padding: 2rem;
-      color: #16a34a; font-weight: 600; display: none;
-    }
-    .form-success.visible { display: block; }
-
-    @media (max-width: 768px) {
-      .cta-section { grid-template-columns: 1fr; }
-    }
-
-    /* ══════════════════════════════════════
-       FOOTER
-    ══════════════════════════════════════ */
-    footer {
-      background: var(--ink); color: rgba(255,255,255,0.7);
-      padding: 4rem 4% 2rem;
-    }
-    .footer-grid {
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
-      gap: 3rem; margin-bottom: 3rem;
-    }
-    .footer-logo {
-      font-family: var(--ff-display);
-      font-size: 1.6rem; font-weight: 800;
-      color: var(--white); margin-bottom: 1rem;
-    }
-    .footer-logo span { color: var(--accent); }
-    .footer-about { font-size: 0.85rem; line-height: 1.7; margin-bottom: 1.5rem; }
-    .footer-social { display: flex; gap: 0.75rem; }
-    .social-link {
-      width: 38px; height: 38px; border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.15);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.75rem; font-weight: 700; color: rgba(255,255,255,0.6);
-      transition: var(--transition);
-    }
-    .social-link:hover { background: var(--accent); border-color: var(--accent); color: var(--white); }
-    .footer-title { font-size: 0.85rem; font-weight: 700; color: var(--white); margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.08em; }
-    .footer-links li { margin-bottom: 0.6rem; }
-    .footer-links a { font-size: 0.85rem; color: rgba(255,255,255,0.55); transition: color var(--transition); }
-    .footer-links a:hover { color: var(--white); }
-    .footer-contact li { font-size: 0.85rem; color: rgba(255,255,255,0.55); display: flex; gap: 0.5rem; align-items: flex-start; }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 1.5rem;
-      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
-      font-size: 0.78rem; color: rgba(255,255,255,0.35);
-    }
-
-    @media (max-width: 900px) {
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 580px) {
-      .footer-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ══════════════════════════════════════
-       WHATSAPP FLOATING BUTTON (NEW)
-    ══════════════════════════════════════ */
-    .wa-btn {
-      position: fixed; bottom: 2rem; right: 2rem; z-index: 900;
-      display: flex; align-items: center; gap: 0.6rem;
-      background: var(--wa-green); color: var(--white);
-      padding: 0.7rem 1.2rem; border-radius: 99px;
-      font-weight: 700; font-size: 0.85rem;
-      box-shadow: 0 6px 20px rgba(37,211,102,0.4);
-      transition: transform var(--transition), box-shadow var(--transition);
-      text-decoration: none;
-    }
-    .wa-btn:hover { transform: scale(1.06) translateY(-2px); box-shadow: 0 10px 28px rgba(37,211,102,0.5); }
-    .wa-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
-    .wa-pulse {
-      width: 10px; height: 10px; border-radius: 50%;
-      background: var(--white); position: absolute; top: -2px; right: -2px;
-      animation: pulse 2s ease infinite;
-    }
-
-    /* ══════════════════════════════════════
-       BACK TO TOP
-    ══════════════════════════════════════ */
-    .back-to-top {
-      position: fixed; bottom: 5rem; left: 2rem; z-index: 900;
-      width: 42px; height: 42px; border-radius: 50%;
-      background: var(--ink); color: var(--white);
-      font-size: 1.1rem; display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 16px var(--shadow-lg);
-      opacity: 0; transform: translateY(10px);
-      transition: opacity var(--transition), transform var(--transition);
-      pointer-events: none;
-    }
-    .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
-    .back-to-top:hover { background: var(--accent); }
-
-    /* ══════════════════════════════════════
-       STATS COUNTER BAND
-    ══════════════════════════════════════ */
-    .stats-band {
-      background: var(--accent);
-      padding: 3rem 4%;
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 2rem; text-align: center;
-    }
-    .stats-band .stat-num { font-family: var(--ff-display); font-size: 2.5rem; font-weight: 900; color: var(--white); }
-    .stats-band .stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.75); font-weight: 500; margin-top: 4px; }
-    @media (max-width: 600px) {
-      .stats-band { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    /* ══════════════════════════════════════
-       DARK OVERLAY for mobile nav
-    ══════════════════════════════════════ */
-    .nav-overlay {
-      display: none; position: fixed; inset: 0; z-index: 999;
-      background: rgba(0,0,0,0.5);
-    }
-    .nav-overlay.open { display: block; }
-
-    /* ══════════════════════════════════════
-       UTILITY
-    ══════════════════════════════════════ */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-    }
-    @media (max-width: 768px) {
-  body {
-    overflow-x: hidden;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  button,
-  .btn {
-    width: 100%;
-  }
-}
-</style>
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 </head>
+
 <body>
 
-<!-- ── LOADING SCREEN ── -->
-<div class="loader" id="loader">
-  <div class="loader-inner">
-    <div class="loader-logo">S R <span>Graphics</span></div>
-    <div class="loader-bar"><div class="loader-progress"></div></div>
-  </div>
-</div>
-
-<!-- ── NAV OVERLAY (mobile) ── -->
-<div class="nav-overlay" id="navOverlay"></div>
-
-<!-- ── NAV ── -->
-<nav id="navbar">
-  <div class="nav-logo">S R <span>Graphics</span></div>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#calculator">Get a Price</a></li>
-    <li><a href="#contact" class="nav-cta">Free Quote</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- ── HERO ── -->
-<section class="hero" id="home">
-  <div class="hero-bg-pattern"></div>
-  <div class="hero-left reveal">
-    <div class="hero-tag">
-      <span class="tag-dot"></span>
-      Bardhaman's #1 Printing Partner
+  <!-- ── LOADING SCREEN ── -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">S R <span>Graphics</span></div>
+      <div class="loader-bar">
+        <div class="loader-progress"></div>
+      </div>
     </div>
-    <h1 class="hero-title">Your Vision,<br /><em>Expertly</em> Printed.</h1>
-    <p class="hero-desc">We transform ideas into impactful print solutions — from corporate branding to large-format displays. Premium quality, delivered on time.</p>
-    <div class="hero-actions">
-      <a href="https://wa.me/917584896513?text=Hi%20SR%20Graphics%2C%20I%27d%20like%20a%20quote%20for%20my%20project" class="btn-primary" target="_blank" rel="noopener">
-        <span>WhatsApp Us</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </div>
+
+  <!-- ── NAV OVERLAY (mobile) ── -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- ── NAV ── -->
+  <nav id="navbar">
+    <div class="nav-logo">S R <span>Graphics</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+          <!-- Moon SVG (visible in light mode) -->
+          <svg class="icon-moon" viewBox="0 0 24 24">
+            <path
+              d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" />
+          </svg>
+          <!-- Sun SVG (visible in dark mode) -->
+          <svg class="icon-sun" viewBox="0 0 24 24">
+            <path
+              d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1zM5.64 6.36a1 1 0 0 0 .7.29 1 1 0 0 0 .71-.29 1 1 0 0 0 0-1.41l-.7-.71a1 1 0 0 0-1.41 1.41l.7.71zm12.02 12.02a1 1 0 0 0 .7.29 1 1 0 0 0 .71-.29c.39-.39.39-1.02 0-1.41l-.71-.7a1 1 0 0 0-1.41 1.41l.71.7zM2 12a1 1 0 0 0 1 1h1a1 1 0 0 0 0-2H3a1 1 0 0 0-1 1zm18 0a1 1 0 0 0 1 1h1a1 1 0 0 0 0-2h-1a1 1 0 0 0-1 1zM6.34 17.66l-.7.71a1 1 0 0 0 1.41 1.41l.7-.71a1 1 0 0 0-1.41-1.41zm12.02-12.02l-.7.71a1 1 0 0 0 1.41 1.41l.71-.71a1 1 0 0 0-1.41-1.41z" />
+          </svg>
+        </button>
+      </li>
+      <li><a href="#contact" class="nav-cta">Free Quote</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <div class="hero-bg-pattern"></div>
+    <div class="blob-container">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    <div class="hero-left reveal">
+      <div class="hero-tag">
+        <span class="tag-dot"></span>
+        Bardhaman's #1 Printing Partner
+      </div>
+      <h1 class="hero-title">Your Vision,<br /><em>Expertly</em> Printed.</h1>
+      <p class="hero-desc">We transform ideas into impactful print solutions — from corporate branding to large-format
+        displays. Premium quality, delivered on time.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/917584896513?text=Hi%20SR%20Graphics%2C%20I%27d%20like%20a%20quote%20for%20my%20project"
+          class="btn-primary" target="_blank" rel="noopener">
+          <span>WhatsApp Us</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+        </a>
+        <a href="#services" class="btn-ghost">Explore Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num" data-count="8">0</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">4.9★</div>
+          <div class="stat-label">Google Rating</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" data-count="500">0</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-visual">
+        <div class="brand-showcase">
+          <div class="showcase-inner">
+            <div class="showcase-tag">Your Brand Here</div>
+            <div class="showcase-text">PREMIUM<br />PRINTING</div>
+          </div>
+        </div>
+        <div class="floating-card card-1 reveal"><span>🎨</span> Custom Designs</div>
+        <div class="floating-card card-2 reveal"><span>⚡</span> Fast Delivery</div>
+        <div class="floating-card card-3 reveal"><span>✨</span> Premium Quality</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRUST BAR ── -->
+  <div class="trust-bar reveal">
+    <p class="trust-label">Trusted by businesses across Bardhaman & beyond</p>
+    <div class="trust-logos">
+      <div class="trust-item">🏢 Local Enterprises</div>
+      <div class="trust-item">🏫 Educational Institutions</div>
+      <div class="trust-item">🏥 Healthcare Providers</div>
+      <div class="trust-item">🛒 Retail Brands</div>
+      <div class="trust-item">🏛️ Government Bodies</div>
+    </div>
+  </div>
+
+  <!-- ── MARQUEE ── -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <div class="marquee-item">Flex Printing <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Digital Banners <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Corporate Gifting <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Brochures & Flyers <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Notebooks & Diaries <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Custom Lanyards <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Business Cards <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Event Branding <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Flex Printing <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Digital Banners <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Corporate Gifting <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Brochures & Flyers <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Notebooks & Diaries <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Custom Lanyards <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Business Cards <span class="marquee-dot"></span></div>
+      <div class="marquee-item">Event Branding <span class="marquee-dot"></span></div>
+    </div>
+  </div>
+
+  <!-- ── STATS BAND ── -->
+  <div class="stats-band">
+    <div>
+      <div class="stat-num" data-count="8">0+</div>
+      <div class="stat-label">Years in Business</div>
+    </div>
+    <div>
+      <div class="stat-num" data-count="500">0+</div>
+      <div class="stat-label">Happy Clients</div>
+    </div>
+    <div>
+      <div class="stat-num" data-count="2000">0+</div>
+      <div class="stat-label">Projects Completed</div>
+    </div>
+    <div>
+      <div class="stat-num">4.9★</div>
+      <div class="stat-label">Google Rating</div>
+    </div>
+  </div>
+
+  <!-- ── SERVICES ── -->
+  <section class="services" id="services">
+    <div class="section-header reveal">
+      <div class="section-tag">What We Offer</div>
+      <h2 class="section-title">Premium Printing &<br>Advertising Services</h2>
+      <p class="section-subtitle">From concept to completion, we deliver print solutions that make your brand
+        unforgettable.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon-wrap"><span class="service-icon">🪧</span></div>
+        <h3 class="service-name">Flex & Digital Printing</h3>
+        <p class="service-desc">Large-format banners, high-quality flex prints, and eye-catching indoor/outdoor displays
+          that command attention.</p>
+        <a href="https://wa.me/917584896513?text=Hi%2C%20I%20want%20a%20quote%20for%20Flex%20%26%20Digital%20Printing"
+          class="service-link" target="_blank">Get Quote on WhatsApp →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon-wrap"><span class="service-icon">📄</span></div>
+        <h3 class="service-name">Marketing Materials</h3>
+        <p class="service-desc">Premium brochures, flyers, leaflets, and magazines tailored to your brand's unique
+          message and identity.</p>
+        <a href="https://wa.me/917584896513?text=Hi%2C%20I%20want%20a%20quote%20for%20Marketing%20Materials"
+          class="service-link" target="_blank">Get Quote on WhatsApp →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon-wrap"><span class="service-icon">📓</span></div>
+        <h3 class="service-name">Custom Stationery</h3>
+        <p class="service-desc">Personalized spiral notebooks, letterheads, envelopes, and business diaries that leave a
+          lasting impression.</p>
+        <a href="https://wa.me/917584896513?text=Hi%2C%20I%20want%20a%20quote%20for%20Custom%20Stationery"
+          class="service-link" target="_blank">Get Quote on WhatsApp →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon-wrap"><span class="service-icon">🎁</span></div>
+        <h3 class="service-name">Corporate Gifting</h3>
+        <p class="service-desc">Custom calendars, lanyards, ID cards, and name tags for your corporate events and
+          employee branding.</p>
+        <a href="https://wa.me/917584896513?text=Hi%2C%20I%20want%20a%20quote%20for%20Corporate%20Gifting"
+          class="service-link" target="_blank">Get Quote on WhatsApp →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon-wrap"><span class="service-icon">🛍️</span></div>
+        <h3 class="service-name">Packaging Solutions</h3>
+        <p class="service-desc">High-quality custom branded gift bags, boxes, and packaging materials for every
+          occasion.</p>
+        <a href="https://wa.me/917584896513?text=Hi%2C%20I%20want%20a%20quote%20for%20Packaging%20Solutions"
+          class="service-link" target="_blank">Get Quote on WhatsApp →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon-wrap"><span class="service-icon">🗓️</span></div>
+        <h3 class="service-name">Personalized Items</h3>
+        <p class="service-desc">Pocket diaries, wall calendars, mugs, and more — all custom-branded with your identity.
+        </p>
+        <a href="https://wa.me/917584896513?text=Hi%2C%20I%20want%20a%20quote%20for%20Personalized%20Items"
+          class="service-link" target="_blank">Get Quote on WhatsApp →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PORTFOLIO (NEW) ── -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="section-header reveal">
+      <div class="section-tag">Our Work</div>
+      <h2 class="section-title">Portfolio & Projects</h2>
+      <p class="section-subtitle">A glimpse of what we create — from small business cards to large event setups.</p>
+    </div>
+    <div class="portfolio-filters reveal">
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="flex">Flex Printing</button>
+      <button class="filter-btn" data-filter="corporate">Corporate</button>
+      <button class="filter-btn" data-filter="stationery">Stationery</button>
+      <button class="filter-btn" data-filter="event">Events</button>
+    </div>
+    <div class="portfolio-grid" id="portfolioGrid">
+      <div class="portfolio-item reveal" data-cat="flex">
+        <div class="portfolio-thumb">🪧</div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-overlay-title">Outdoor Flex Banner</div>
+          <div class="portfolio-overlay-tag">Flex Printing</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-name">Large Format Flex Banner</div>
+          <div class="portfolio-cat">Flex & Digital Printing</div>
+        </div>
+      </div>
+      <div class="portfolio-item reveal" data-cat="corporate">
+        <div class="portfolio-thumb">🎁</div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-overlay-title">Corporate Gift Set</div>
+          <div class="portfolio-overlay-tag">Corporate</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-name">Corporate Gift Kit — Lanyards + ID Cards</div>
+          <div class="portfolio-cat">Corporate Gifting</div>
+        </div>
+      </div>
+      <div class="portfolio-item reveal" data-cat="stationery">
+        <div class="portfolio-thumb">📓</div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-overlay-title">Custom Diary Set</div>
+          <div class="portfolio-overlay-tag">Stationery</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-name">Branded Spiral Notebooks</div>
+          <div class="portfolio-cat">Custom Stationery</div>
+        </div>
+      </div>
+      <div class="portfolio-item reveal" data-cat="event">
+        <div class="portfolio-thumb">🎪</div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-overlay-title">Full Event Branding</div>
+          <div class="portfolio-overlay-tag">Events</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-name">Full Event Branding Package</div>
+          <div class="portfolio-cat">Event Branding</div>
+        </div>
+      </div>
+      <div class="portfolio-item reveal" data-cat="flex">
+        <div class="portfolio-thumb">📢</div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-overlay-title">Shop Signage</div>
+          <div class="portfolio-overlay-tag">Flex Printing</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-name">Retail Shop Hoarding</div>
+          <div class="portfolio-cat">Flex & Digital Printing</div>
+        </div>
+      </div>
+      <div class="portfolio-item reveal" data-cat="corporate">
+        <div class="portfolio-thumb">📇</div>
+        <div class="portfolio-overlay">
+          <div class="portfolio-overlay-title">Business Cards</div>
+          <div class="portfolio-overlay-tag">Corporate</div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-name">Premium Business Cards</div>
+          <div class="portfolio-cat">Marketing Materials</div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-upload-cta reveal">
+      <p>Have a project in mind? Share your design file and we'll send you a quote.</p>
+      <a href="https://wa.me/917584896513?text=Hi%20SR%20Graphics%2C%20I%20want%20to%20share%20my%20design%20file%20for%20a%20quote"
+        class="btn-primary" style="display:inline-flex;" target="_blank">
+        <span>Share Your Design on WhatsApp</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
       </a>
-      <a href="#services" class="btn-ghost">Explore Services</a>
     </div>
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-num" data-count="8">0</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">4.9★</div>
-        <div class="stat-label">Google Rating</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num" data-count="500">0</div>
-        <div class="stat-label">Happy Clients</div>
-      </div>
-    </div>
-  </div>
+  </section>
 
-  <div class="hero-right">
-    <div class="hero-visual">
-      <div class="brand-showcase">
-        <div class="showcase-inner">
-          <div class="showcase-tag">Your Brand Here</div>
-          <div class="showcase-text">PREMIUM<br/>PRINTING</div>
+  <!-- ── ABOUT ── -->
+  <section class="about" id="about">
+    <div class="about-content reveal">
+      <div class="section-tag">Our Story</div>
+      <h2 class="section-title">Crafting Print Excellence<br>Since 2018</h2>
+      <p class="about-text">S R Graphics has been Bardhaman's trusted printing and advertising partner for over 8 years.
+        We combine traditional craftsmanship with cutting-edge digital technology to deliver print solutions that exceed
+        expectations.</p>
+      <p class="about-text">Our state-of-the-art facility, experienced team, and commitment to quality have made us the
+        go-to choice for businesses, institutions, and individuals alike.</p>
+      <div class="about-highlights">
+        <div class="highlight">
+          <div class="highlight-icon">🏆</div>
+          <div>
+            <strong>Award-Winning Quality</strong>
+            <p>Recognized for premium print standards across West Bengal</p>
+          </div>
+        </div>
+        <div class="highlight">
+          <div class="highlight-icon">🕐</div>
+          <div>
+            <strong>On-Time Delivery</strong>
+            <p>99% of orders delivered before the deadline</p>
+          </div>
+        </div>
+        <div class="highlight">
+          <div class="highlight-icon">💰</div>
+          <div>
+            <strong>Competitive Pricing</strong>
+            <p>Best value without compromising print quality</p>
+          </div>
         </div>
       </div>
-      <div class="floating-card card-1 reveal"><span>🎨</span> Custom Designs</div>
-      <div class="floating-card card-2 reveal"><span>⚡</span> Fast Delivery</div>
-      <div class="floating-card card-3 reveal"><span>✨</span> Premium Quality</div>
     </div>
-  </div>
-</section>
+    <div class="about-visual reveal">
+      <div class="about-card">
+        <div class="about-card-inner">
+          <div class="about-stat-big">8+</div>
+          <div class="about-stat-label">Years of<br>Excellence</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- ── TRUST BAR ── -->
-<div class="trust-bar reveal">
-  <p class="trust-label">Trusted by businesses across Bardhaman & beyond</p>
-  <div class="trust-logos">
-    <div class="trust-item">🏢 Local Enterprises</div>
-    <div class="trust-item">🏫 Educational Institutions</div>
-    <div class="trust-item">🏥 Healthcare Providers</div>
-    <div class="trust-item">🛒 Retail Brands</div>
-    <div class="trust-item">🏛️ Government Bodies</div>
-  </div>
-</div>
+  <!-- ── WHY CHOOSE US ── -->
+  <section class="why-us" id="why-us">
+    <div class="section-header reveal">
+      <div class="section-tag">Why Choose Us</div>
+      <h2 class="section-title">What Sets Us Apart</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-number">01</div>
+        <h3>Premium Materials</h3>
+        <p>We use only the highest-grade printing materials, ensuring every product looks and feels exceptional.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-number">02</div>
+        <h3>Latest Technology</h3>
+        <p>Our advanced digital and offset printing machines deliver razor-sharp results with vibrant colors.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-number">03</div>
+        <h3>Custom Solutions</h3>
+        <p>Every project is unique. We tailor our approach to match your specific vision and requirements.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-number">04</div>
+        <h3>Expert Support</h3>
+        <p>From design consultation to final delivery, our experienced team guides you every step of the way.</p>
+      </div>
+    </div>
+  </section>
 
-<!-- ── MARQUEE ── -->
-<div class="marquee-strip">
-  <div class="marquee-track">
-    <div class="marquee-item">Flex Printing <span class="marquee-dot"></span></div>
-    <div class="marquee-item">Digital Banners <span class="marquee-dot"></span></div>
-    <div class="marquee-item">Corporate Gifting <span class="marquee-dot"></span></div>
-    <div class="marquee-item">Brochures & Flyers <span class="marquee-dot"></span></div>
-    <div class="marquee-item">Notebooks & Diaries <span class="marquee-dot"></span></div>
-    <div class="marquee-item">Custom Lanyards <span class="marquee-dot"></span></div>
-    <div class="marquee-item">Business Cards <span class="marquee-dot"></span></div>
-    <div class="marquee-item">Event Branding <span class="marquee-dot"></span></div>
-    <div class="marquee-item">Flex Printing <span class="marquee-dot"></span></div>
-    <div class="marquee-item">Digital Banners <span class="marquee-dot"></span></div>
-    <div class="marquee-item">Corporate Gifting <span class="marquee-dot"></span></div>
-    <div class="marquee-item">Brochures & Flyers <span class="marquee-dot"></span></div>
-    <div class="marquee-item">Notebooks & Diaries <span class="marquee-dot"></span></div>
-    <div class="marquee-item">Custom Lanyards <span class="marquee-dot"></span></div>
-    <div class="marquee-item">Business Cards <span class="marquee-dot"></span></div>
-    <div class="marquee-item">Event Branding <span class="marquee-dot"></span></div>
-  </div>
-</div>
+  <!-- ── TESTIMONIALS ── -->
+  <section class="testimonials">
+    <div class="section-header reveal">
+      <div class="section-tag">Client Testimonials</div>
+      <h2 class="section-title">What Our Clients Say</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The quality of printing is exceptional. SR Graphics handled our entire event
+          branding — banners, standees, badges — everything was perfect and delivered on time."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">RK</div>
+          <div>
+            <strong>Rajesh Kumar</strong>
+            <span>Event Organizer, Bardhaman</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"We've been using SR Graphics for all our school stationery and branding materials.
+          Their attention to detail and customer service is unmatched in the area."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SP</div>
+          <div>
+            <strong>Sunita Patel</strong>
+            <span>School Administrator</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Best printing agency in Bardhaman! From business cards to large flex banners, they
+          handle everything with professionalism. Highly recommended for any business."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AM</div>
+          <div>
+            <strong>Amit Mondal</strong>
+            <span>Business Owner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- ── STATS BAND ── -->
-<div class="stats-band">
-  <div>
-    <div class="stat-num" data-count="8">0+</div>
-    <div class="stat-label">Years in Business</div>
-  </div>
-  <div>
-    <div class="stat-num" data-count="500">0+</div>
-    <div class="stat-label">Happy Clients</div>
-  </div>
-  <div>
-    <div class="stat-num" data-count="2000">0+</div>
-    <div class="stat-label">Projects Completed</div>
-  </div>
-  <div>
-    <div class="stat-num">4.9★</div>
-    <div class="stat-label">Google Rating</div>
-  </div>
-</div>
+  <!-- ── CONTACT ── -->
+  <section class="cta-section" id="contact">
+    <div class="reveal">
+      <h2 class="cta-title">Ready to Elevate<br />Your Brand?</h2>
+      <p class="cta-desc">Get a free consultation and competitive quote for your next printing project.</p>
+      <div class="cta-features">
+        <div class="cta-feature">✓ Free Design Consultation</div>
+        <div class="cta-feature">✓ Competitive Pricing</div>
+        <div class="cta-feature">✓ Fast Turnaround</div>
+        <div class="cta-feature">✓ WhatsApp Updates on Your Order</div>
+      </div>
+      <br>
+      <a href="https://wa.me/917584896513?text=Hi%20SR%20Graphics%2C%20I%27d%20like%20a%20free%20consultation"
+        class="btn-primary" target="_blank" rel="noopener" style="display:inline-flex; margin-top: 1rem;">
+        <span>Chat on WhatsApp Now</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+      </a>
+      <a href="tel:+917584896513" class="btn-ghost"
+        style="display:inline-flex; margin-top:1rem; margin-left: 1rem; border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.8);">
+        📞 Call Us Directly
+      </a>
+    </div>
 
-<!-- ── SERVICES ── -->
-<section class="services" id="services">
-  <div class="section-header reveal">
-    <div class="section-tag">What We Offer</div>
-    <h2 class="section-title">Premium Printing &<br>Advertising Services</h2>
-    <p class="section-subtitle">From concept to completion, we deliver print solutions that make your brand unforgettable.</p>
-  </div>
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <div class="service-icon-wrap"><span class="service-icon">🪧</span></div>
-      <h3 class="service-name">Flex & Digital Printing</h3>
-      <p class="service-desc">Large-format banners, high-quality flex prints, and eye-catching indoor/outdoor displays that command attention.</p>
-      <a href="https://wa.me/917584896513?text=Hi%2C%20I%20want%20a%20quote%20for%20Flex%20%26%20Digital%20Printing" class="service-link" target="_blank">Get Quote on WhatsApp →</a>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon-wrap"><span class="service-icon">📄</span></div>
-      <h3 class="service-name">Marketing Materials</h3>
-      <p class="service-desc">Premium brochures, flyers, leaflets, and magazines tailored to your brand's unique message and identity.</p>
-      <a href="https://wa.me/917584896513?text=Hi%2C%20I%20want%20a%20quote%20for%20Marketing%20Materials" class="service-link" target="_blank">Get Quote on WhatsApp →</a>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon-wrap"><span class="service-icon">📓</span></div>
-      <h3 class="service-name">Custom Stationery</h3>
-      <p class="service-desc">Personalized spiral notebooks, letterheads, envelopes, and business diaries that leave a lasting impression.</p>
-      <a href="https://wa.me/917584896513?text=Hi%2C%20I%20want%20a%20quote%20for%20Custom%20Stationery" class="service-link" target="_blank">Get Quote on WhatsApp →</a>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon-wrap"><span class="service-icon">🎁</span></div>
-      <h3 class="service-name">Corporate Gifting</h3>
-      <p class="service-desc">Custom calendars, lanyards, ID cards, and name tags for your corporate events and employee branding.</p>
-      <a href="https://wa.me/917584896513?text=Hi%2C%20I%20want%20a%20quote%20for%20Corporate%20Gifting" class="service-link" target="_blank">Get Quote on WhatsApp →</a>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon-wrap"><span class="service-icon">🛍️</span></div>
-      <h3 class="service-name">Packaging Solutions</h3>
-      <p class="service-desc">High-quality custom branded gift bags, boxes, and packaging materials for every occasion.</p>
-      <a href="https://wa.me/917584896513?text=Hi%2C%20I%20want%20a%20quote%20for%20Packaging%20Solutions" class="service-link" target="_blank">Get Quote on WhatsApp →</a>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon-wrap"><span class="service-icon">🗓️</span></div>
-      <h3 class="service-name">Personalized Items</h3>
-      <p class="service-desc">Pocket diaries, wall calendars, mugs, and more — all custom-branded with your identity.</p>
-      <a href="https://wa.me/917584896513?text=Hi%2C%20I%20want%20a%20quote%20for%20Personalized%20Items" class="service-link" target="_blank">Get Quote on WhatsApp →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ── PORTFOLIO (NEW) ── -->
-<section class="portfolio-section" id="portfolio">
-  <div class="section-header reveal">
-    <div class="section-tag">Our Work</div>
-    <h2 class="section-title">Portfolio & Projects</h2>
-    <p class="section-subtitle">A glimpse of what we create — from small business cards to large event setups.</p>
-  </div>
-  <div class="portfolio-filters reveal">
-    <button class="filter-btn active" data-filter="all">All Work</button>
-    <button class="filter-btn" data-filter="flex">Flex Printing</button>
-    <button class="filter-btn" data-filter="corporate">Corporate</button>
-    <button class="filter-btn" data-filter="stationery">Stationery</button>
-    <button class="filter-btn" data-filter="event">Events</button>
-  </div>
-  <div class="portfolio-grid" id="portfolioGrid">
-    <div class="portfolio-item reveal" data-cat="flex">
-      <div class="portfolio-thumb">🪧</div>
-      <div class="portfolio-overlay">
-        <div class="portfolio-overlay-title">Outdoor Flex Banner</div>
-        <div class="portfolio-overlay-tag">Flex Printing</div>
+    <div class="cta-box reveal">
+      <h3 class="cta-box-title">Request a Quote</h3>
+      <div class="form-success" id="formSuccess">
+        ✅ Message sent! We'll get back to you within a few hours.
       </div>
-      <div class="portfolio-info">
-        <div class="portfolio-name">Large Format Flex Banner</div>
-        <div class="portfolio-cat">Flex & Digital Printing</div>
-      </div>
-    </div>
-    <div class="portfolio-item reveal" data-cat="corporate">
-      <div class="portfolio-thumb">🎁</div>
-      <div class="portfolio-overlay">
-        <div class="portfolio-overlay-title">Corporate Gift Set</div>
-        <div class="portfolio-overlay-tag">Corporate</div>
-      </div>
-      <div class="portfolio-info">
-        <div class="portfolio-name">Corporate Gift Kit — Lanyards + ID Cards</div>
-        <div class="portfolio-cat">Corporate Gifting</div>
-      </div>
-    </div>
-    <div class="portfolio-item reveal" data-cat="stationery">
-      <div class="portfolio-thumb">📓</div>
-      <div class="portfolio-overlay">
-        <div class="portfolio-overlay-title">Custom Diary Set</div>
-        <div class="portfolio-overlay-tag">Stationery</div>
-      </div>
-      <div class="portfolio-info">
-        <div class="portfolio-name">Branded Spiral Notebooks</div>
-        <div class="portfolio-cat">Custom Stationery</div>
-      </div>
-    </div>
-    <div class="portfolio-item reveal" data-cat="event">
-      <div class="portfolio-thumb">🎪</div>
-      <div class="portfolio-overlay">
-        <div class="portfolio-overlay-title">Full Event Branding</div>
-        <div class="portfolio-overlay-tag">Events</div>
-      </div>
-      <div class="portfolio-info">
-        <div class="portfolio-name">Full Event Branding Package</div>
-        <div class="portfolio-cat">Event Branding</div>
-      </div>
-    </div>
-    <div class="portfolio-item reveal" data-cat="flex">
-      <div class="portfolio-thumb">📢</div>
-      <div class="portfolio-overlay">
-        <div class="portfolio-overlay-title">Shop Signage</div>
-        <div class="portfolio-overlay-tag">Flex Printing</div>
-      </div>
-      <div class="portfolio-info">
-        <div class="portfolio-name">Retail Shop Hoarding</div>
-        <div class="portfolio-cat">Flex & Digital Printing</div>
-      </div>
-    </div>
-    <div class="portfolio-item reveal" data-cat="corporate">
-      <div class="portfolio-thumb">📇</div>
-      <div class="portfolio-overlay">
-        <div class="portfolio-overlay-title">Business Cards</div>
-        <div class="portfolio-overlay-tag">Corporate</div>
-      </div>
-      <div class="portfolio-info">
-        <div class="portfolio-name">Premium Business Cards</div>
-        <div class="portfolio-cat">Marketing Materials</div>
-      </div>
-    </div>
-  </div>
-  <div class="portfolio-upload-cta reveal">
-    <p>Have a project in mind? Share your design file and we'll send you a quote.</p>
-    <a href="https://wa.me/917584896513?text=Hi%20SR%20Graphics%2C%20I%20want%20to%20share%20my%20design%20file%20for%20a%20quote" class="btn-primary" style="display:inline-flex;" target="_blank">
-      <span>Share Your Design on WhatsApp</span>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
-  </div>
-</section>
-
-<!-- ── PRICE CALCULATOR (NEW) ── -->
-<section class="calculator-section" id="calculator">
-  <div class="calculator-inner">
-    <div class="calculator-left reveal">
-      <div class="section-tag">Instant Estimate</div>
-      <h2 class="section-title">How Much Will It Cost?</h2>
-      <p>Get a ballpark price instantly. Adjust the sliders — the more you order, the lower your per-unit cost. Final quotes are always confirmed via WhatsApp.</p>
-    </div>
-    <div class="calc-box reveal">
-      <div class="calc-field">
-        <label class="calc-label">Product Type</label>
-        <select class="calc-select" id="calcProduct">
-          <option value="flex">Flex Banner (per sq. ft.)</option>
-          <option value="flyer">A4 Flyers</option>
-          <option value="card">Business Cards</option>
-          <option value="notebook">Custom Notebook</option>
-          <option value="lanyard">Lanyards</option>
-          <option value="diary">Pocket Diary</option>
+      <form id="contactForm">
+        <input class="cta-input" name="name" type="text" placeholder="Your Full Name" required>
+        <input class="cta-input" name="phone" type="tel" placeholder="Phone Number" required>
+        <input class="cta-input" name="email" type="email" placeholder="Email Address (Optional)">
+        <select class="cta-input cta-select" name="service" required>
+          <option value="" disabled selected>Select a Service</option>
+          <option>Flex & Digital Printing</option>
+          <option>Marketing Materials</option>
+          <option>Custom Stationery</option>
+          <option>Corporate Gifting</option>
+          <option>Packaging Solutions</option>
+          <option>Other</option>
         </select>
-      </div>
-      <div class="calc-field">
-        <label class="calc-label">
-          Quantity
-          <span id="calcQtyDisplay">100</span>
-        </label>
-        <input type="range" class="calc-slider" id="calcQty" min="10" max="1000" value="100" step="10">
-      </div>
-      <div class="calc-field">
-        <label class="calc-label">
-          Size / Variant
-        </label>
-        <select class="calc-select" id="calcSize">
-          <option value="1">Standard</option>
-          <option value="1.5">Large</option>
-          <option value="2">Extra Large</option>
-        </select>
-      </div>
-      <div class="calc-result">
-        <div>
-          <div class="calc-result-label">Estimated Total</div>
-          <div class="calc-result-price" id="calcTotal">₹1,500</div>
-          <div class="calc-result-unit" id="calcUnit">₹15 per unit</div>
-        </div>
-        <div style="text-align:right;">
-          <div class="calc-result-label">You Save</div>
-          <div class="calc-result-price" id="calcSaving">₹0</div>
-          <div class="calc-result-unit">vs single unit</div>
+        <textarea class="cta-input cta-textarea" name="message" placeholder="Tell us about your project..."
+          rows="3"></textarea>
+        <button type="submit" class="cta-btn" id="submitBtn">
+          <span>Send Enquiry</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+          </svg>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">S R <span>Graphics</span></div>
+        <p class="footer-about">Bardhaman's leading printing & advertising agency. Premium quality print solutions for
+          businesses of all sizes.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Facebook">FB</a>
+          <a href="https://instagram.com" class="social-link" aria-label="Instagram">IG</a>
+          <a href="https://wa.me/917584896513" class="social-link" aria-label="WhatsApp" target="_blank">WA</a>
         </div>
       </div>
-      <a href="https://wa.me/917584896513?text=Hi%2C%20I%20used%20your%20price%20calculator%20and%20want%20a%20final%20quote" class="calc-cta" target="_blank">Confirm Quote on WhatsApp →</a>
-    </div>
-  </div>
-</section>
-
-<!-- ── ABOUT ── -->
-<section class="about" id="about">
-  <div class="about-content reveal">
-    <div class="section-tag">Our Story</div>
-    <h2 class="section-title">Crafting Print Excellence<br>Since 2018</h2>
-    <p class="about-text">S R Graphics has been Bardhaman's trusted printing and advertising partner for over 8 years. We combine traditional craftsmanship with cutting-edge digital technology to deliver print solutions that exceed expectations.</p>
-    <p class="about-text">Our state-of-the-art facility, experienced team, and commitment to quality have made us the go-to choice for businesses, institutions, and individuals alike.</p>
-    <div class="about-highlights">
-      <div class="highlight">
-        <div class="highlight-icon">🏆</div>
-        <div>
-          <strong>Award-Winning Quality</strong>
-          <p>Recognized for premium print standards across West Bengal</p>
-        </div>
+      <div class="footer-col">
+        <h3 class="footer-title">Services</h3>
+        <ul class="footer-links">
+          <li><a href="#services">Flex Printing</a></li>
+          <li><a href="#services">Marketing Materials</a></li>
+          <li><a href="#services">Custom Stationery</a></li>
+          <li><a href="#services">Corporate Gifting</a></li>
+          <li><a href="#services">Packaging</a></li>
+        </ul>
       </div>
-      <div class="highlight">
-        <div class="highlight-icon">🕐</div>
-        <div>
-          <strong>On-Time Delivery</strong>
-          <p>99% of orders delivered before the deadline</p>
-        </div>
+      <div class="footer-col">
+        <h3 class="footer-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </div>
-      <div class="highlight">
-        <div class="highlight-icon">💰</div>
-        <div>
-          <strong>Competitive Pricing</strong>
-          <p>Best value without compromising print quality</p>
-        </div>
+      <div class="footer-col">
+        <h3 class="footer-title">Contact Info</h3>
+        <ul class="footer-links footer-contact">
+          <li>📍 Bardhaman, West Bengal, India</li>
+          <li>📞 <a href="tel:+917584896513">+91 75848 96513</a></li>
+          <li>✉️ <a href="mailto:srgraphics71@gmail.com">srgraphics71@gmail.com</a></li>
+          <li>🕐 Mon–Sat: 9:00 AM – 8:00 PM</li>
+        </ul>
       </div>
     </div>
-  </div>
-  <div class="about-visual reveal">
-    <div class="about-card">
-      <div class="about-card-inner">
-        <div class="about-stat-big">8+</div>
-        <div class="about-stat-label">Years of<br>Excellence</div>
-      </div>
+    <div class="footer-bottom">
+      <p>© 2026 S R Graphics. All rights reserved.</p>
+      <p>Designed and maintained by Soumajit Roy & Team in Bardhaman</p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ── WHY CHOOSE US ── -->
-<section class="why-us" id="why-us">
-  <div class="section-header reveal">
-    <div class="section-tag">Why Choose Us</div>
-    <h2 class="section-title">What Sets Us Apart</h2>
-  </div>
-  <div class="why-grid">
-    <div class="why-card reveal">
-      <div class="why-number">01</div>
-      <h3>Premium Materials</h3>
-      <p>We use only the highest-grade printing materials, ensuring every product looks and feels exceptional.</p>
-    </div>
-    <div class="why-card reveal">
-      <div class="why-number">02</div>
-      <h3>Latest Technology</h3>
-      <p>Our advanced digital and offset printing machines deliver razor-sharp results with vibrant colors.</p>
-    </div>
-    <div class="why-card reveal">
-      <div class="why-number">03</div>
-      <h3>Custom Solutions</h3>
-      <p>Every project is unique. We tailor our approach to match your specific vision and requirements.</p>
-    </div>
-    <div class="why-card reveal">
-      <div class="why-number">04</div>
-      <h3>Expert Support</h3>
-      <p>From design consultation to final delivery, our experienced team guides you every step of the way.</p>
-    </div>
-  </div>
-</section>
+  <!-- ── WHATSAPP FLOATING BUTTON (NEW) ── -->
+  <a href="https://wa.me/917584896513?text=Hi%20SR%20Graphics%2C%20I%27d%20like%20a%20quote" class="wa-btn"
+    target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <div class="wa-pulse"></div>
+    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+    Chat on WhatsApp
+  </a>
 
-<!-- ── TESTIMONIALS ── -->
-<section class="testimonials">
-  <div class="section-header reveal">
-    <div class="section-tag">Client Testimonials</div>
-    <h2 class="section-title">What Our Clients Say</h2>
-  </div>
-  <div class="testimonial-grid">
-    <div class="testimonial-card reveal">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">"The quality of printing is exceptional. SR Graphics handled our entire event branding — banners, standees, badges — everything was perfect and delivered on time."</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">RK</div>
-        <div>
-          <strong>Rajesh Kumar</strong>
-          <span>Event Organizer, Bardhaman</span>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card reveal">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">"We've been using SR Graphics for all our school stationery and branding materials. Their attention to detail and customer service is unmatched in the area."</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">SP</div>
-        <div>
-          <strong>Sunita Patel</strong>
-          <span>School Administrator</span>
-        </div>
-      </div>
-    </div>
-    <div class="testimonial-card reveal">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">"Best printing agency in Bardhaman! From business cards to large flex banners, they handle everything with professionalism. Highly recommended for any business."</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">AM</div>
-        <div>
-          <strong>Amit Mondal</strong>
-          <span>Business Owner</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- ── BACK TO TOP ── -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
-<!-- ── CONTACT ── -->
-<section class="cta-section" id="contact">
-  <div class="reveal">
-    <h2 class="cta-title">Ready to Elevate<br />Your Brand?</h2>
-    <p class="cta-desc">Get a free consultation and competitive quote for your next printing project.</p>
-    <div class="cta-features">
-      <div class="cta-feature">✓ Free Design Consultation</div>
-      <div class="cta-feature">✓ Competitive Pricing</div>
-      <div class="cta-feature">✓ Fast Turnaround</div>
-      <div class="cta-feature">✓ WhatsApp Updates on Your Order</div>
-    </div>
-    <br>
-    <a href="https://wa.me/917584896513?text=Hi%20SR%20Graphics%2C%20I%27d%20like%20a%20free%20consultation" class="btn-primary" target="_blank" rel="noopener" style="display:inline-flex; margin-top: 1rem;">
-      <span>Chat on WhatsApp Now</span>
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </a>
-    <a href="tel:+917584896513" class="btn-ghost" style="display:inline-flex; margin-top:1rem; margin-left: 1rem; border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.8);">
-      📞 Call Us Directly
-    </a>
-  </div>
-
-  <div class="cta-box reveal">
-    <h3 class="cta-box-title">Request a Quote</h3>
-    <div class="form-success" id="formSuccess">
-      ✅ Message sent! We'll get back to you within a few hours.
-    </div>
-    <form id="contactForm">
-      <input class="cta-input" name="name" type="text" placeholder="Your Full Name" required>
-      <input class="cta-input" name="phone" type="tel" placeholder="Phone Number" required>
-      <input class="cta-input" name="email" type="email" placeholder="Email Address (Optional)">
-      <select class="cta-input cta-select" name="service" required>
-        <option value="" disabled selected>Select a Service</option>
-        <option>Flex & Digital Printing</option>
-        <option>Marketing Materials</option>
-        <option>Custom Stationery</option>
-        <option>Corporate Gifting</option>
-        <option>Packaging Solutions</option>
-        <option>Other</option>
-      </select>
-      <textarea class="cta-input cta-textarea" name="message" placeholder="Tell us about your project..." rows="3"></textarea>
-      <button type="submit" class="cta-btn" id="submitBtn">
-        <span>Send Enquiry</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-      </button>
-    </form>
-  </div>
-</section>
-
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-col">
-      <div class="footer-logo">S R <span>Graphics</span></div>
-      <p class="footer-about">Bardhaman's leading printing & advertising agency. Premium quality print solutions for businesses of all sizes.</p>
-      <div class="footer-social">
-        <a href="#" class="social-link" aria-label="Facebook">FB</a>
-        <a href="https://instagram.com" class="social-link" aria-label="Instagram">IG</a>
-        <a href="https://wa.me/917584896513" class="social-link" aria-label="WhatsApp" target="_blank">WA</a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h3 class="footer-title">Services</h3>
-      <ul class="footer-links">
-        <li><a href="#services">Flex Printing</a></li>
-        <li><a href="#services">Marketing Materials</a></li>
-        <li><a href="#services">Custom Stationery</a></li>
-        <li><a href="#services">Corporate Gifting</a></li>
-        <li><a href="#services">Packaging</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h3 class="footer-title">Quick Links</h3>
-      <ul class="footer-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#calculator">Price Calculator</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h3 class="footer-title">Contact Info</h3>
-      <ul class="footer-links footer-contact">
-        <li>📍 Bardhaman, West Bengal, India</li>
-        <li>📞 <a href="tel:+917584896513">+91 75848 96513</a></li>
-        <li>✉️ <a href="mailto:srgraphics71@gmail.com">srgraphics71@gmail.com</a></li>
-        <li>🕐 Mon–Sat: 9:00 AM – 8:00 PM</li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 S R Graphics. All rights reserved.</p>
-    <p>Designed with ❤️ by Soumajit Roy & Team in Bardhaman</p>
-  </div>
-</footer>
-
-<!-- ── WHATSAPP FLOATING BUTTON (NEW) ── -->
-<a href="https://wa.me/917584896513?text=Hi%20SR%20Graphics%2C%20I%27d%20like%20a%20quote" class="wa-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <div class="wa-pulse"></div>
-  <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-  Chat on WhatsApp
-</a>
-
-<!-- ── BACK TO TOP ── -->
-<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
-
-<script>
-  /* ── LOADER ── */
-  window.addEventListener('load', () => {
-    setTimeout(() => document.getElementById('loader').classList.add('hidden'), 1800);
-  });
-
-  /* ── NAV SCROLL STATE ── */
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
-    document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
-  });
-
-  /* ── MOBILE NAV ── */
-  const hamburger = document.getElementById('hamburger');
-  const navLinks  = document.getElementById('navLinks');
-  const overlay   = document.getElementById('navOverlay');
-
-  function closeNav() {
-    hamburger.classList.remove('open');
-    navLinks.classList.remove('open');
-    overlay.classList.remove('open');
-  }
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    navLinks.classList.toggle('open');
-    overlay.classList.toggle('open');
-  });
-  overlay.addEventListener('click', closeNav);
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
-
-  /* ── BACK TO TOP ── */
-  document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-  /* ── REVEAL ON SCROLL ── */
-  const revealEls = document.querySelectorAll('.reveal');
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  revealEls.forEach(el => revealObserver.observe(el));
-
-  /* ── COUNTER ANIMATION ── */
-  function animateCount(el, target, suffix = '') {
-    let start = 0; const dur = 1800; const step = 16;
-    const inc = target / (dur / step);
-    const timer = setInterval(() => {
-      start += inc;
-      if (start >= target) { start = target; clearInterval(timer); }
-      el.textContent = Math.floor(start).toLocaleString('en-IN') + suffix;
-    }, step);
-  }
-  const counterEls = document.querySelectorAll('[data-count]');
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const el = e.target;
-        const target = parseInt(el.dataset.count);
-        const suffix = el.dataset.suffix || '+';
-        animateCount(el, target, suffix);
-        counterObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-  counterEls.forEach(el => counterObserver.observe(el));
-
-  /* ── PORTFOLIO FILTER ── */
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      document.querySelectorAll('.portfolio-item').forEach(item => {
-        const show = filter === 'all' || item.dataset.cat === filter;
-        item.style.display = show ? '' : 'none';
-      });
-    });
-  });
-
-  /* ── PRICE CALCULATOR ── */
-  const basePrices = {
-    flex:     { unit: 18, single: 50 },
-    flyer:    { unit: 4,  single: 15 },
-    card:     { unit: 5,  single: 20 },
-    notebook: { unit: 90, single: 200 },
-    lanyard:  { unit: 35, single: 80 },
-    diary:    { unit: 120, single: 250 }
-  };
-
-  function updateCalc() {
-    const product = document.getElementById('calcProduct').value;
-    const qty     = parseInt(document.getElementById('calcQty').value);
-    const sizeMul = parseFloat(document.getElementById('calcSize').value);
-    document.getElementById('calcQtyDisplay').textContent = qty;
-
-    const base = basePrices[product];
-    // Bulk discount: 0–10% based on qty
-    const discount = Math.min(0.1, (qty - 10) / 990 * 0.1);
-    const unitPrice = base.unit * sizeMul * (1 - discount);
-    const total = Math.round(unitPrice * qty);
-    const saved = Math.round((base.single * sizeMul - unitPrice) * qty);
-
-    document.getElementById('calcTotal').textContent = '₹' + total.toLocaleString('en-IN');
-    document.getElementById('calcUnit').textContent  = '₹' + Math.round(unitPrice) + ' per unit';
-    document.getElementById('calcSaving').textContent = saved > 0 ? '₹' + saved.toLocaleString('en-IN') : '₹0';
-  }
-
-  document.getElementById('calcProduct').addEventListener('change', updateCalc);
-  document.getElementById('calcQty').addEventListener('input', updateCalc);
-  document.getElementById('calcSize').addEventListener('change', updateCalc);
-  updateCalc();
-
-  /* ── CONTACT FORM ── */
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const btn = document.getElementById('submitBtn');
-    btn.classList.add('loading');
-    btn.querySelector('span').textContent = 'Sending...';
-
-    // Build WhatsApp message from form data
-    const data = new FormData(this);
-    const msg = encodeURIComponent(
-      `New Quote Request from SR Graphics Website\n\nName: ${data.get('name')}\nPhone: ${data.get('phone')}\nEmail: ${data.get('email') || 'N/A'}\nService: ${data.get('service')}\nMessage: ${data.get('message')}`
-    );
-
-    // Simulate send delay then redirect to WA
-    setTimeout(() => {
-      document.getElementById('formSuccess').classList.add('visible');
-      this.style.display = 'none';
-      window.open(`https://wa.me/917584896513?text=${msg}`, '_blank');
-    }, 1200);
-  });
-</script>
+  <script type="module" src="/src/main.js"></script>
 </body>
+
 </html>
