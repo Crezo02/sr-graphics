@@ -263,8 +263,6 @@
   background: var(--surface-2);
   aspect-ratio: 4 / 3;
 }
-.portfolio-item--tall .portfolio-media { aspect-ratio: 3 / 4; }
-.portfolio-item--wide .portfolio-media { aspect-ratio: 16 / 9; }
 .portfolio-media img {
   width: 100%; height: 100%;
   object-fit: cover;
