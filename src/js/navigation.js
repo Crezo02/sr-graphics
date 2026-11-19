@@ -10,8 +10,8 @@ export function initNavigation() {
 
   /* ── MOBILE NAV ── */
   const hamburger = document.getElementById('hamburger');
-  const navLinks  = document.getElementById('navLinks');
-  const overlay   = document.getElementById('navOverlay');
+  const navLinks = document.getElementById('navLinks');
+  const overlay = document.getElementById('navOverlay');
 
   function closeNav() {
     if (hamburger) hamburger.classList.remove('open');
@@ -32,5 +32,24 @@ export function initNavigation() {
   /* ── BACK TO TOP ── */
   if (backToTop) {
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+
+  /* ── ACTIVE SECTION HIGHLIGHTING ── */
+  const sectionLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+  const sections = sectionLinks
+    .map(link => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+  if (sections.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        sectionLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+
+    sections.forEach(section => observer.observe(section));
   }
 }

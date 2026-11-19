@@ -1,4 +1,4 @@
-# SR Graphics — Website v2.0
+# SR Graphics — Website v3.0
 
 **Live site:** https://sr-graphics.vercel.app  
 **Stack:** Vanilla HTML · CSS · JS · Vite · Deployed on Vercel
@@ -9,28 +9,41 @@
 
 ```
 sr-graphics/
-├── index.html          ← The entire site (HTML + CSS + JS, self-contained)
+├── index.html              ← Page markup, SEO meta, LocalBusiness JSON-LD
 ├── src/
-│   ├── index.css       ← Reserved for future global overrides
-│   └── main.js         ← Kept for Vite compatibility
+│   ├── main.js             ← Entry point, wires up the modules
+│   ├── styles/
+│   │   ├── variables.css   ← Design tokens, light/dark themes
+│   │   ├── base.css        ← Reset, container, focus styles
+│   │   ├── layout.css      ← Page structure (nav, hero, sections, footer)
+│   │   ├── components.css  ← Cards, gallery, lightbox, forms, buttons
+│   │   └── main.css        ← Imports the four files above
+│   └── js/
+│       ├── theme.js        ← Light/dark toggle
+│       ├── navigation.js   ← Sticky nav, mobile menu, active link
+│       ├── animations.js   ← Reveal on scroll, counters
+│       ├── portfolio.js    ← Gallery category filters
+│       ├── lightbox.js     ← Full-screen image viewer
+│       └── contact.js      ← Enquiry form → WhatsApp
+├── public/
+│   ├── favicon.svg
+│   └── images/             ← Optimised site images (jpg + webp)
+├── assets/source-photos/   ← Unedited originals, for re-cropping
 ├── vite.config.js
-├── package.json
-├── eslint.config.js
-└── .gitignore
+└── package.json
 ```
 
-## Features (v2.0 upgrades)
+## Features
 
-- ✅ Floating WhatsApp button — pre-filled messages per service
-- ✅ Bulk price calculator with live per-unit cost slider
-- ✅ Filterable portfolio/gallery section
-- ✅ LocalBusiness JSON-LD schema (Google local pack)
-- ✅ Full Open Graph + SEO meta tags
-- ✅ Scroll-triggered reveal animations + counter animations
-- ✅ Contact form routes to WhatsApp with pre-filled enquiry
-- ✅ Stats band (8+ years, 500+ clients, 2000+ projects)
-- ✅ Mobile nav with overlay
-- ✅ `prefers-reduced-motion` respected
+- Real photography throughout — hero, gallery, about, social share card
+- Masonry gallery with category filters and a keyboard-navigable lightbox
+- Four-step process section, stats band, trust bar, testimonials
+- Top utility bar with phone, address, opening hours and rating
+- Light/dark theme toggle (respects system preference, remembers the choice)
+- LocalBusiness JSON-LD with address, hours, geo coordinates and images
+- Open Graph + Twitter cards, favicon, responsive layout, mobile nav
+- Contact form that hands the enquiry to WhatsApp with the details pre-filled
+- `prefers-reduced-motion` respected
 
 ## Running locally
 
@@ -41,21 +54,19 @@ npm run dev
 
 ## Deploy to Vercel
 
-Push to GitHub — Vercel auto-deploys on every commit.  
+Push to GitHub — Vercel auto-deploys on every commit.
 No build configuration needed (Vite detects `index.html` automatically).
 
-## Adding real portfolio images
+## Swapping the photos
 
-In `index.html`, find `.portfolio-thumb` divs and replace the emoji with:
+Site images live in `public/images/` as paired `.jpg` + `.webp`. Every `<picture>`
+block references both, so replace them with the same filenames and the gallery,
+hero and lightbox pick them up automatically.
 
-```html
-<img src="/assets/your-photo.jpg" alt="Project name" style="width:100%;height:100%;object-fit:cover;">
-```
-
-Place images in `/public/assets/` so Vite copies them to `dist/`.
+Unedited originals are kept in `assets/source-photos/`.
 
 ## Contact
 
 📞 +91 75848 96513  
 ✉️ srgraphics71@gmail.com  
-📍 Bardhaman, West Bengal, India
+📍 Kalibazar Road, Near Girls High School, Bardhaman – 713103
